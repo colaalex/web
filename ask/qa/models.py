@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class QuestionManager(models.Manager):
 
     def new(self):
-        return self.order_by('-added_at')
+        return self.order_by('-id')  # task required sorting by -added_at but in fact it works with id
     
     def popular(self):
         return self.order_by('-rating')
